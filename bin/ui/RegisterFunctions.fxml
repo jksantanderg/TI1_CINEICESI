@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckMenuItem?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <Label layoutX="201.0" layoutY="45.0" text="REGISTER FUNCTION">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="date" layoutX="233.0" layoutY="99.0" prefHeight="30.0" prefWidth="199.0" />
+      <Label layoutX="146.0" layoutY="101.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="145.0" layoutY="143.0" text="Hour">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="153.0" layoutY="296.0" text="Sala">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="salaMB" layoutX="240.0" layoutY="297.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="199.0">
+        <items>
+            <CheckMenuItem mnemonicParsing="false" text="MiniSala" />
+            <CheckMenuItem mnemonicParsing="false" text="Sala Media" />
+        </items>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="hi" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuButton>
+      <Label layoutX="145.0" layoutY="180.0" text="Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="130.0" layoutY="229.0" text="Duration">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="movieName" layoutX="240.0" layoutY="181.0" prefHeight="25.0" prefWidth="199.0" />
+      <Button layoutX="213.0" layoutY="364.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="176.0" text="Register" />
+      <MenuBar prefHeight="25.0" prefWidth="600.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Options">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#Return" text="Return" />
+                  <MenuItem mnemonicParsing="false" onAction="#Exit" text="Exit" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
