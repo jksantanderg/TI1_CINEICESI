@@ -15,52 +15,6 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="434.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Label layoutX="201.0" layoutY="45.0" text="REGISTER FUNCTION">
-         <font>
-            <Font name="System Bold" size="20.0" />
-         </font>
-      </Label>
-      <DatePicker fx:id="date" layoutX="233.0" layoutY="99.0" prefHeight="30.0" prefWidth="199.0" />
-      <Label layoutX="146.0" layoutY="101.0" text="Date">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="145.0" layoutY="143.0" text="Hour">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="153.0" layoutY="296.0" text="Sala">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <MenuButton fx:id="salaMB" layoutX="240.0" layoutY="297.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="199.0">
-        <items>
-            <CheckMenuItem mnemonicParsing="false" text="MiniSala" />
-            <CheckMenuItem mnemonicParsing="false" text="Sala Media" />
-        </items>
-         <contextMenu>
-            <ContextMenu>
-              <items>
-                <MenuItem mnemonicParsing="false" text="hi" />
-              </items>
-            </ContextMenu>
-         </contextMenu>
-      </MenuButton>
-      <Label layoutX="145.0" layoutY="180.0" text="Name">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="130.0" layoutY="229.0" text="Duration">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <TextField fx:id="movieName" layoutX="240.0" layoutY="181.0" prefHeight="25.0" prefWidth="199.0" />
-      <Button layoutX="213.0" layoutY="364.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="176.0" text="Register" />
       <MenuBar prefHeight="25.0" prefWidth="600.0">
         <menus>
           <Menu mnemonicParsing="false" text="Options">
@@ -71,5 +25,53 @@
           </Menu>
         </menus>
       </MenuBar>
+      <Label layoutX="213.0" layoutY="46.0" text="REGISTER FUNCTION">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="148.0" layoutY="114.0" text="Name">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="nameFilmTF" layoutX="240.0" layoutY="115.0" prefHeight="25.0" prefWidth="199.0" />
+      <Label layoutX="153.0" layoutY="161.0" text="Date">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <DatePicker fx:id="dateP" layoutX="240.0" layoutY="159.0" prefHeight="30.0" prefWidth="199.0" />
+      <Label layoutX="152.0" layoutY="203.0" text="Hour">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="hourTF" layoutX="240.0" layoutY="204.0" prefHeight="25.0" prefWidth="199.0" />
+      <Label layoutX="137.0" layoutY="249.0" text="Duration">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="durationTF" layoutX="240.0" layoutY="250.0" prefHeight="25.0" prefWidth="199.0" />
+      <Label layoutX="153.0" layoutY="296.0" text="Sala">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <MenuButton fx:id="salaMB" layoutX="240.0" layoutY="297.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="199.0">
+        <items>
+            <CheckMenuItem fx:id="MiniSala" mnemonicParsing="false" text="MiniSala" />
+            <CheckMenuItem fx:id="SalaMedia" mnemonicParsing="false" text="Sala Media" />
+        </items>
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem mnemonicParsing="false" text="hi" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+      </MenuButton>
+      <Button layoutX="213.0" layoutY="364.0" mnemonicParsing="false" onAction="#register" prefHeight="25.0" prefWidth="176.0" style="-fx-background-color: blue;" text="Register" textFill="#fcf7f7" />
    </children>
 </AnchorPane>
