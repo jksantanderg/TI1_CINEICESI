@@ -3,7 +3,6 @@ package control;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -83,7 +82,7 @@ public class Entry implements Initializable{
 		hallTC.setCellValueFactory(new PropertyValueFactory<>("hall"));
     
     	
-    	FilmData.data.add(new Film("Toy Story","24/01/2021","14:00","2:30","MINISALA"));
+    	FilmData.data.add(new Film("Toy Story","2021-01-24","14:00","2:30","MiniSala"));
     	
     	
     	filmTable.setItems(FilmData.data);

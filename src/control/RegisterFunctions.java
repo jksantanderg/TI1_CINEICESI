@@ -2,6 +2,9 @@ package control;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ResourceBundle;
 
 import javafx.application.Platform;
@@ -11,10 +14,11 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.Alert;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.DatePicker;
-import javafx.scene.control.MenuButton;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import main.Main;
 import model.Film;
@@ -35,23 +39,35 @@ public class RegisterFunctions implements Initializable {
     @FXML
     private TextField durationTF;
 
-    @FXML
-    private MenuButton salaMB;
 
     @FXML
-    private CheckMenuItem MiniSala;
-
-    @FXML
-    private CheckMenuItem SalaMedia;
+    private ComboBox<String> hallCB;
 
     
     @FXML
     void register(ActionEvent event) {
+    	if(nameFilmTF.equals(null)) {
+    		if(dateP.equals(null)) {
+    			if(hourTF.equals(null)) {
+    				if(durationTF.equals(null)) {
+    					AlertERROR();
+    				}
+    			}
+    		}
+    	}else {
+    		AlertOk();
+    		reg();	
+    	}
+    }
+    
+    void reg() {
+    	//ComboBox,getSelectionModel().getSelectedItem();
     	String name = nameFilmTF.getText();
-   	 	String date = dateP.getPromptText();
+    	LocalDate myDate = dateP.getValue();
+    	String date = myDate.toString();
    	 	String hour  = hourTF.getText();
    	 	String duration  = durationTF.getText();
-   	 	String hall = "Sala";
+   	 	String hall = hallCB.getSelectionModel().getSelectedItem();
    	 	
    	
    	 	Film st = new Film(name,date,hour,duration,hall);
@@ -79,9 +95,30 @@ public class RegisterFunctions implements Initializable {
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		// TODO Auto-generated method stub
+
+    	ArrayList<String>list = new ArrayList<>();
+    	Collections.addAll(list, new String[]{"MiniSala","SalaMedia"});
+    	
+    	hallCB.getItems().addAll(list);
 		
 	}
+	
+    void AlertERROR() {
+    	Alert alert = new Alert(AlertType.ERROR);
+    	alert.setTitle("ERROR");
+    	alert.setHeaderText("Error, Incomplet");
+    	alert.setContentText("Ooops, a field is missing!");
 
+    	alert.showAndWait();
+    }
+    
+    void AlertOk() {
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setTitle("add of film");
+    	alert.setHeaderText("SUCCESSFUL");
+    	alert.setContentText("movie added SUCCESSFULLY!!");
+
+    	alert.showAndWait();
+    }
    
 }
