@@ -5,6 +5,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
@@ -16,10 +18,11 @@ public class MainWindow{
 
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
-    	if(id.getText().equals("")) {
-    		System.out.println("error");
-    	}else {
+    	if(id.getText().equals("1100")) {
     		init();
+    	}else {
+    		AlertERROR();
+    		
     	}	
     		
     	}  
@@ -33,7 +36,14 @@ public class MainWindow{
 		stage.show();
     }    	
     	
-		
+    void AlertERROR() {
+    	Alert alert = new Alert(AlertType.ERROR);
+    	alert.setTitle("ERROR");
+    	alert.setHeaderText("Error, Incorrecto");
+    	alert.setContentText("Ooops, The document I entered does not correspond to a welfare student!");
+
+    	alert.showAndWait();
+    }
 		
     }
 
