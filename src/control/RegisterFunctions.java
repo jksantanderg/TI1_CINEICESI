@@ -46,17 +46,20 @@ public class RegisterFunctions implements Initializable {
     
     @FXML
     void register(ActionEvent event) {
-    	if(nameFilmTF.equals(null)) {
-    		if(dateP.equals(null)) {
-    			if(hourTF.equals(null)) {
-    				if(durationTF.equals(null)) {
-    					AlertERROR();
-    				}
-    			}
-    		}
+    	if(nameFilmTF.getText().equals("")) {
+    		AlertERROR();
+    		
+    	}else if (dateP.getValue() == (null)){
+    		AlertERROR();	
+    	}else if (hourTF.getText().equalsIgnoreCase("")) {
+    		AlertERROR();
+    	}else if (durationTF.getText().equalsIgnoreCase("")) {
+    		AlertERROR();
+    	}else if (hallCB.getSelectionModel().getSelectedItem() == (null)) {
+    		AlertERROR();
     	}else {
     		AlertOk();
-    		reg();	
+    		reg();
     	}
     }
     

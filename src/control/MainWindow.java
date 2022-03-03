@@ -16,11 +16,24 @@ public class MainWindow{
 
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
+    	if(id.getText().equals("")) {
+    		System.out.println("error");
+    	}else {
+    		init();
+    	}	
+    		
+    	}  
+    
+    public void init()throws Exception{  
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
 		Parent parent = (Parent) loader.load();
 		Scene scene = new Scene (parent);
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
+    }    	
+    	
+		
+		
     }
-}
+
