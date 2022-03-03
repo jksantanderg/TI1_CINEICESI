@@ -28,12 +28,12 @@ public class Film {
 	}
 
 
-	public String getData() {
+	public String getDate() {
 		return date;
 	}
 
 
-	public void setData(String data) {
+	public void setDate(String data) {
 		this.date = data;
 	}
 
