@@ -13,7 +13,9 @@ public class Main extends Application {
 		launch(args);
 		
 		PersonalData data = new PersonalData();
-		data.date();
+		//data.saveData();
+		data.LoadData();
+		
 	}
 	
 	@Override

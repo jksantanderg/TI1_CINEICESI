@@ -6,7 +6,6 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.ResourceBundle;
-
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -62,7 +61,7 @@ public class RegisterFunctions implements Initializable {
     		reg();
     	}
     }
-    
+    private FilmData filmData;
     void reg() {
     	//ComboBox,getSelectionModel().getSelectedItem();
     	String name = nameFilmTF.getText();
@@ -72,12 +71,13 @@ public class RegisterFunctions implements Initializable {
    	 	String duration  = durationTF.getText();
    	 	String hall = hallCB.getSelectionModel().getSelectedItem();
    	 	
-   	
    	 	Film st = new Film(name,date,hour,duration,hall);
-   	 	FilmData.data.add(st);
-   	
+	 	FilmData.data.add(st);
+	
+   	 	
    	 	Stage stage = (Stage) nameFilmTF.getScene().getWindow();
    	 	stage.close();
+   	 	
     }
     
     @FXML

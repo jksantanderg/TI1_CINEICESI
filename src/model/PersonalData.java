@@ -10,7 +10,7 @@ import java.io.ObjectOutputStream;
 import java.util.ArrayList;
 
 public class PersonalData {
-	private Personal personal;
+	public Personal personal;
 	private ArrayList<Personal> personals;
 	
 	public PersonalData() {
@@ -19,16 +19,6 @@ public class PersonalData {
 	
 	public void addPersonal(Personal personal) {
 		personals.add(personal);
-	}
-
-
-	public void date() {
-	
-		addPersonal(new Personal ("1107"));
-		addPersonal(new Personal ("0000"));
-		addPersonal(new Personal ("1100"));
-			
-		saveData();
 	}
 	
 	
