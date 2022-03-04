@@ -67,9 +67,10 @@ public class Entry implements Initializable{
     	
     	Student st = new Student(name,id);
     	StudentData.data.add(st);
+    	
    	
-    	//Stage stage = (Stage) nameTF.getScene().getWindow();
-    	//stage.close();     	
+    	Stage stage = (Stage) nameTF.getScene().getWindow();
+    	stage.close();     	
     	 
     }
 

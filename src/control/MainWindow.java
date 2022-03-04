@@ -10,6 +10,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
+import model.Personal;
 
 public class MainWindow{
 
@@ -19,13 +20,21 @@ public class MainWindow{
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
     	if(id.getText().equals("1100")) {
+    	
     		init();
     	}else {
     		AlertERROR();
     		
     	}	
     		
-    	}  
+    }  
+    private Personal personal;
+    public void validar() {
+    	if(personal.getIdPersonal().equals(id.getText())) {
+    		System.out.println("");
+    	}
+    }
+
     
     public void init()throws Exception{  
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
@@ -45,5 +54,5 @@ public class MainWindow{
     	alert.showAndWait();
     }
 		
-    }
+}
 
