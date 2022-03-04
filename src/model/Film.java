@@ -1,5 +1,6 @@
 package model;
 
+
 public class Film {
 	private String name;
 	private String date;
@@ -7,6 +8,7 @@ public class Film {
 	private String duration;
 	private String hall;
 	
+	//private ArrayList<Film> films;
 	
 	public Film(String name, String data, String hour, String duration, String hall) {
 		super();

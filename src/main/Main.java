@@ -5,15 +5,17 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import model.PersonalData;
 
 public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
-
+		
+		PersonalData data = new PersonalData();
+		data.date();
 	}
-
-
+	
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MainWindow.fxml"));
@@ -22,7 +24,6 @@ public class Main extends Application {
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
-		
-		
+
 	}
 }
