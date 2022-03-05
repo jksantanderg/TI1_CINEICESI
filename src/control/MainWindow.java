@@ -11,6 +11,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import main.Main;
 import model.Personal;
+import model.PersonalData;
 
 public class MainWindow{
 
@@ -19,15 +20,34 @@ public class MainWindow{
 
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
+    	//if(checkUser(id.getText())) {
     	if(id.getText().equals("1100")) {
-    	
     		init();
     	}else {
     		AlertERROR();
     		
     	}	
     		
-    }  
+    } 
+    
+    /**
+     * This method checks if an user exists
+     * @param id
+     * @return userExists, boolean, true if the user exists, false otherwise
+     */
+    public boolean checkUser (String id) {
+    	boolean userExists = false;
+    	for(Personal personal : PersonalData.personals) {
+    		if(personal.getIdPersonal().equals(id)) {
+    			userExists = true;
+    			break;
+    		}
+    	}
+    			
+    	return userExists;
+    	
+    }
+    
     private Personal personal;
     public void validar() {
     	if(personal.getIdPersonal().equals(id.getText())) {

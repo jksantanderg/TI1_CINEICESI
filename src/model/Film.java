@@ -10,7 +10,7 @@ public class Film {
 	private String hall;
 	
 	private ArrayList<Student> students;
-	
+	//private Room sala;
 	
 	
 	public Film(String name, String date, String hour, String duration, String hall, ArrayList<Student> students) {

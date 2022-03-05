@@ -63,6 +63,10 @@ public class Entry implements Initializable{
 
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
+    	RegistarStudent();	
+    	 
+    }
+    void RegistarStudent() {
     	String name = nameTF.getText();
     	String id = idTF.getText();
     	
@@ -71,8 +75,7 @@ public class Entry implements Initializable{
     	
    	
     	Stage stage = (Stage) nameTF.getScene().getWindow();
-    	stage.close();     	
-    	 
+    	stage.close();   
     }
 
 	@Override
