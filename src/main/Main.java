@@ -19,7 +19,7 @@ public class Main extends Application {
 		
 		PersonalData data = new PersonalData();
 		//data.saveData();
-		data.LoadData();
+		//data.LoadData();
 		
 	}
 	

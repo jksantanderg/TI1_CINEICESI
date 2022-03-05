@@ -18,7 +18,6 @@ import javafx.stage.Stage;
 import main.Main;
 import model.Film;
 import model.FilmData;
-import model.PersonalData;
 import model.Student;
 import model.StudentData;
 
