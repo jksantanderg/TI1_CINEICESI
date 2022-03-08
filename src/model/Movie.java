@@ -3,7 +3,7 @@ package model;
 import java.util.ArrayList;
 
 public class Movie {
-	private String name;
+	private String nameMovie;
 	private String date;
 	private String hour;
 	private String duration;
@@ -11,22 +11,11 @@ public class Movie {
 	
 	private ArrayList<Student> students;
 	//private Room sala;
-	
-	
-	public Movie(String name, String date, String hour, String duration, String hall, ArrayList<Student> students) {
-		super();
-		this.name = name;
-		this.date = date;
-		this.hour = hour;
-		this.duration = duration;
-		this.hall = hall;
-		this.students = students;
-	}
 
 
 	public Movie(String name, String data, String hour, String duration, String hall) {
 		super();
-		this.name = name;
+		this.nameMovie = nameMovie;
 		this.date = data;
 		this.hour = hour;
 		this.duration = duration;
@@ -35,12 +24,12 @@ public class Movie {
 
 
 	public String getName() {
-		return name;
+		return nameMovie;
 	}
 
 
-	public void setName(String name) {
-		this.name = name;
+	public void setName(String nameMovie) {
+		this.nameMovie = nameMovie;
 	}
 
 
