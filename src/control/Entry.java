@@ -16,30 +16,30 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.Main;
-import model.Film;
-import model.FilmData;
+import model.Movie;
+import model.MovieData;
 import model.Student;
 import model.StudentData;
 
 public class Entry implements Initializable{
 
     @FXML
-    private TableView<Film> filmTable;
+    private TableView<Movie> filmTable;
 
     @FXML
-    private TableColumn<Film, String> nameTC;
+    private TableColumn<Movie, String> nameTC;
 
     @FXML
-    private TableColumn<Film, String> dateTC;
+    private TableColumn<Movie, String> dateTC;
 
     @FXML
-    private TableColumn<Film, String> hourTC;
+    private TableColumn<Movie, String> hourTC;
 
     @FXML
-    private TableColumn<Film, String> durationTC;
+    private TableColumn<Movie, String> durationTC;
 
     @FXML
-    private TableColumn<Film, String> hallTC;
+    private TableColumn<Movie, String> hallTC;
     
     @FXML
     private TextField nameTF;
@@ -86,13 +86,13 @@ public class Entry implements Initializable{
 		hallTC.setCellValueFactory(new PropertyValueFactory<>("hall"));
     
     	
-    	FilmData.data.add(new Film("Toy Story","2021-01-24","14:00","2:30","MiniSala"));
+    	MovieData.data.add(new Movie("Toy Story","2021-01-24","14:00","2:30","MiniSala"));
     	
     	
-    	filmTable.setItems(FilmData.data);
+    	filmTable.setItems(MovieData.data);
     	
     	filmTable.setOnMouseClicked(event ->{
-    		Film stClicked = filmTable.getSelectionModel().getSelectedItem();
+    		Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
     		System.out.println(stClicked.getName());
     		
     		

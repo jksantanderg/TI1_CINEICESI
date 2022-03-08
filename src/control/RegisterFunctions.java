@@ -20,8 +20,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import main.Main;
-import model.Film;
-import model.FilmData;
+import model.Movie;
+import model.MovieData;
 
 
 public class RegisterFunctions implements Initializable {
@@ -61,7 +61,7 @@ public class RegisterFunctions implements Initializable {
     		reg();
     	}
     }
-    private FilmData filmData;
+    private MovieData filmData;
     void reg() {
     	//ComboBox,getSelectionModel().getSelectedItem();
     	String name = nameFilmTF.getText();
@@ -71,8 +71,8 @@ public class RegisterFunctions implements Initializable {
    	 	String duration  = durationTF.getText();
    	 	String hall = hallCB.getSelectionModel().getSelectedItem();
    	 	
-   	 	Film st = new Film(name,date,hour,duration,hall);
-	 	FilmData.data.add(st);
+   	 	Movie st = new Movie(name,date,hour,duration,hall);
+	 	MovieData.data.add(st);
 	
    	 	
    	 	Stage stage = (Stage) nameFilmTF.getScene().getWindow();

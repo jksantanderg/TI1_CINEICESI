@@ -12,18 +12,18 @@ import java.util.ArrayList;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
-public class FilmData {
-	public Film film;
+public class MovieData {
+	public Movie film;
 	
-	public static ObservableList<Film> data = FXCollections.observableArrayList();
+	public static ObservableList<Movie> data = FXCollections.observableArrayList();
 
-	private ArrayList<Film> films;
+	private ArrayList<Movie> films;
 	
-	public FilmData() {
+	public MovieData() {
 		films = new ArrayList<>();
 	}
 	
-	public void addFilm(Film film) {
+	public void addFilm(Movie film) {
 		films.add(film);
 	}
 	public void saveData()  {
@@ -51,7 +51,7 @@ public class FilmData {
 			FileInputStream fis = new FileInputStream(file);
 			ObjectInputStream ois = new ObjectInputStream(fis);
 			Object object = ois.readObject();
-			FilmData data = (FilmData) object;
+			MovieData data = (MovieData) object;
 			this.film = data.film;
 			
 				
