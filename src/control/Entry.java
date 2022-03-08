@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -27,7 +28,7 @@ public class Entry implements Initializable{
     private TableView<Movie> filmTable;
 
     @FXML
-    private TableColumn<Movie, String> nameTC;
+    private TableColumn<Movie, String> nameMovieTC;
 
     @FXML
     private TableColumn<Movie, String> dateTC;
@@ -47,39 +48,56 @@ public class Entry implements Initializable{
     @FXML
     private TextField idTF;
     
-    //private Film stClicked;
+    @FXML
+    private TableView<Student> studentTable;
+
+    @FXML
+    private TableColumn<Student, String> nameTC;
+
+    @FXML
+    private TableColumn<Student, String> idTC;
+    
+    @FXML
+    private Label movieLbl;
+    
+    @FXML
+    private Label studentLbl;
+    
+    private Movie stClicked;
+    private Student stClickedS;
+    
+    @FXML
+    void RegisterEvent(ActionEvent event) throws IOException {
+    		
+    	 
+    }
     
     @FXML
     void RegisterFuntions(ActionEvent event)  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RegisterFunctions.fxml"));
-		loader.setController(new RegisterFunctions());
+		//loader.setController(new RegisterFunctions());
 		Parent parent = (Parent) loader.load();
 		Scene scene = new Scene (parent);
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
     }
-
     @FXML
-    void RegisterEvent(ActionEvent event) throws IOException {
-    	RegistarStudent();	
-    	 
+    void RegisterStudent(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RegisterStudent.fxml"));
+		//loader.setController(new RegisterStudent());
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene (parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
-    void RegistarStudent() {
-    	String name = nameTF.getText();
-    	String id = idTF.getText();
-    	
-    	Student st = new Student(name,id);
-    	StudentData.data.add(st);
-    	
-   	
-    	Stage stage = (Stage) nameTF.getScene().getWindow();
-    	stage.close();   
-    }
+   
+   
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		nameTC.setCellValueFactory(new PropertyValueFactory<>("name"));
+		nameMovieTC.setCellValueFactory(new PropertyValueFactory<>("nameMovie"));
 		dateTC.setCellValueFactory(new PropertyValueFactory<>("date"));
 		hourTC.setCellValueFactory(new PropertyValueFactory<>("hour"));
 		durationTC.setCellValueFactory(new PropertyValueFactory<>("duration"));
@@ -93,9 +111,27 @@ public class Entry implements Initializable{
     	
     	filmTable.setOnMouseClicked(event ->{
     		Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
-    		System.out.println(stClicked.getName());
+    		System.out.println(stClicked.getNameMovie());
+    		
+    		movieLbl.setText(stClicked.getNameMovie());
     		
     		
+    	});
+    	
+		nameTC.setCellValueFactory(new PropertyValueFactory<>("name"));
+		idTC.setCellValueFactory(new PropertyValueFactory<>("id"));
+    	
+    	StudentData.data.add(new Student("Jessica","123456"));
+    	
+    	
+    	studentTable.setItems(StudentData.data);
+    	
+    	studentTable.setOnMouseClicked(event ->{
+    		Student stClickedS = studentTable.getSelectionModel().getSelectedItem();
+    		System.out.println(stClickedS.getName());
+    		
+    		studentLbl.setText(stClickedS.getName());
+
     	});
     	
     	

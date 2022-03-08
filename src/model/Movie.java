@@ -1,7 +1,5 @@
 package model;
 
-import java.util.ArrayList;
-
 public class Movie {
 	private String nameMovie;
 	private String date;
@@ -9,11 +7,10 @@ public class Movie {
 	private String duration;
 	private String hall;
 	
-	private ArrayList<Student> students;
-	//private Room sala;
+	private Cinema cinema;
 
 
-	public Movie(String name, String data, String hour, String duration, String hall) {
+	public Movie(String nameMovie, String data, String hour, String duration, String hall) {
 		super();
 		this.nameMovie = nameMovie;
 		this.date = data;
@@ -23,12 +20,12 @@ public class Movie {
 	}
 
 
-	public String getName() {
+	public String getNameMovie() {
 		return nameMovie;
 	}
 
 
-	public void setName(String nameMovie) {
+	public void setNameMovie(String nameMovie) {
 		this.nameMovie = nameMovie;
 	}
 
@@ -70,5 +67,15 @@ public class Movie {
 
 	public void setHall(String hall) {
 		this.hall = hall;
+	}
+
+
+	public Cinema getCinema() {
+		return cinema;
+	}
+
+
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
 	}
 }

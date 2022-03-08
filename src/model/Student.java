@@ -5,6 +5,8 @@ public class Student {
 	private String name;
 	private String id;
 	
+	private Cinema cinema;
+	
 	public Student(String name, String id) {
 		super();
 		this.name = name;
@@ -23,4 +25,13 @@ public class Student {
 	public void setId(String id) {
 		this.id = id;
 	}
+
+	public Cinema getCinema() {
+		return cinema;
+	}
+
+	public void setCinema(Cinema cinema) {
+		this.cinema = cinema;
+	}
+
 }

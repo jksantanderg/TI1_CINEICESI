@@ -1,23 +1,17 @@
 package main;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import model.PersonalData;
 
 public class Main extends Application {
 
 	public static void main(String[] args) {
 		launch(args);
 		
-		PersonalData data = new PersonalData();
+		//PersonalData data = new PersonalData();
 		//data.saveData();
 		//data.LoadData();
 		

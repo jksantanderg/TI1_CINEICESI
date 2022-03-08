@@ -61,7 +61,7 @@ public class RegisterFunctions implements Initializable {
     		reg();
     	}
     }
-    private MovieData filmData;
+    
     void reg() {
     	//ComboBox,getSelectionModel().getSelectedItem();
     	String name = nameFilmTF.getText();
