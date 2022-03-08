@@ -27,7 +27,7 @@ public class RegisterStudent implements Initializable{
     private TextField idTF;
     
     @FXML
-    void register(ActionEvent event) {
+    void register(ActionEvent event) throws IOException {
     	if(nameTF.getText().equals("")) {
     		AlertERROR();
     		
@@ -36,6 +36,7 @@ public class RegisterStudent implements Initializable{
     	}else {
     		AlertOk();
     		reg();
+    		Event(event);
     	}
     }
     	
@@ -49,6 +50,16 @@ public class RegisterStudent implements Initializable{
    	
     	Stage stage = (Stage) nameTF.getScene().getWindow();
     	stage.close(); 
+    }
+    
+    @FXML
+    void Event(ActionEvent event) throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Event.fxml"));
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene (parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
 
     @FXML

@@ -4,9 +4,9 @@ import java.util.ArrayList;
 
 public class Cinema {
 	private Movie movie;
-	private ArrayList<Student> students;
+	public ArrayList<Student> students;
 	private RoomType roomType;
-	private ArrayList<Chair> chairs;
+	public ArrayList<Chair> chairs;
 	
 	
 	public static final Integer capacidadMINISALA = 28;
