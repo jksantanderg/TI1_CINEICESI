@@ -60,7 +60,7 @@ public class RegisterFunctions implements Initializable {
     	}else {
     		AlertOk();
     		reg();
-    		definirSala();
+    		
     	}
     }
     
