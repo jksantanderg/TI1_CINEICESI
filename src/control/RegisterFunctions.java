@@ -22,6 +22,7 @@ import javafx.stage.Stage;
 import main.Main;
 import model.Movie;
 import model.MovieData;
+import model.RoomType;
 
 
 public class RegisterFunctions implements Initializable {
@@ -59,6 +60,7 @@ public class RegisterFunctions implements Initializable {
     	}else {
     		AlertOk();
     		reg();
+    		definirSala();
     	}
     }
     
@@ -79,6 +81,7 @@ public class RegisterFunctions implements Initializable {
    	 	stage.close();
    	 	
     }
+
     
     @FXML
     void Return(ActionEvent event) throws IOException {

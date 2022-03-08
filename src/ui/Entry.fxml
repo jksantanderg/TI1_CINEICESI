@@ -20,7 +20,7 @@
       <Button layoutX="531.0" layoutY="356.0" mnemonicParsing="false" onAction="#RegisterEvent" prefHeight="36.0" prefWidth="123.0" style="-fx-background-color: Blue;" text="Register Event" textFill="#fcf5f5" />
       <MenuBar layoutY="2.0" onDragDetected="#RegisterFuntions" prefHeight="25.0" prefWidth="704.0">
         <menus>
-          <Menu mnemonicParsing="false" text="Register Funtions">
+          <Menu mnemonicParsing="false" text="Register">
                <items>
                   <MenuItem mnemonicParsing="false" onAction="#RegisterFuntions" text="Register Movie" />
                   <MenuItem mnemonicParsing="false" onAction="#RegisterStudent" text="Register Student" />

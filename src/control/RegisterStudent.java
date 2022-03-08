@@ -28,6 +28,18 @@ public class RegisterStudent implements Initializable{
     
     @FXML
     void register(ActionEvent event) {
+    	if(nameTF.getText().equals("")) {
+    		AlertERROR();
+    		
+    	}else if (idTF.getText().equals("")){
+    		AlertERROR();	
+    	}else {
+    		AlertOk();
+    		reg();
+    	}
+    }
+    	
+    public void reg() {
     	String name = nameTF.getText();
     	String id = idTF.getText();
     	

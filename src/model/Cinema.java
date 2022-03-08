@@ -5,9 +5,15 @@ import java.util.ArrayList;
 public class Cinema {
 	private Movie movie;
 	private ArrayList<Student> students;
-	private ArrayList<Chair> chairs;
 	private RoomType roomType;
+	private ArrayList<Chair> chairs;
 	
+	
+	public static final Integer capacidadMINISALA = 28;
+	public static final Integer capacidadSALAMEDIA = 42;
+	
+	
+	public Cinema() {}
 	
 	public Cinema(Movie movie, ArrayList<Student> students, ArrayList<Chair> chairs, RoomType roomType) {
 		super();
@@ -20,6 +26,19 @@ public class Cinema {
 	public void EnrollStudent(Student student) {
 		students.add(student);
 		student.setCinema(this);
+		
+	}
+	
+	
+	public void SelectChair(Chair chair) {
+		chairs.add(chair);
+		chair.setCinema(this);
+	}
+
+	
+	public void AssignChair(Chair chair) {
+		chairs.add(chair);
+		chair.setCinema(this);
 		
 	}
 	

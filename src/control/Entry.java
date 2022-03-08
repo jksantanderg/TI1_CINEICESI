@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.net.URL;
+import java.time.LocalDate;
 import java.util.ResourceBundle;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
@@ -17,6 +18,8 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.Main;
+import model.Chair;
+import model.Cinema;
 import model.Movie;
 import model.MovieData;
 import model.Student;
@@ -59,17 +62,31 @@ public class Entry implements Initializable{
     
     @FXML
     private Label movieLbl;
-    
+    private Chair chair;
     @FXML
     private Label studentLbl;
     
     private Movie stClicked;
     private Student stClickedS;
     
+    void RegistarCinema() {
+    	
+    	//Cinema st = new Cinema(stClicked, stClickedS,chair,room));
+    	//CinemaData.data.add(st);
+    	
+    	
+    }
+
+    void RegistarInMovie() {
+    	Cinema data = new Cinema();
+    	Student student = stClickedS;
+    	data.EnrollStudent(student);
+    }
+    
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
-    		
-    	 
+    	//RegistarInMovie();	
+    	
     }
     
     @FXML
