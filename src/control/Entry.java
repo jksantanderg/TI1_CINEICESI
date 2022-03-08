@@ -66,7 +66,7 @@ public class Entry implements Initializable{
     @FXML
     private Label studentLbl;
     
-    private Movie stClicked;
+    private static Movie stClicked;
     private Student stClickedS;
     
     void RegistarCinema() {
@@ -85,8 +85,46 @@ public class Entry implements Initializable{
     
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
-    	//RegistarInMovie();	
+    	//RegistarInMovie();
+    	SelecRoom();
     	
+    	
+    	
+    	
+    }
+    
+    void SelecRoom() throws IOException {
+    	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
+		
+    	if(stClicked.getHall().equals("MiniSala")) {
+    		System.out.println(stClicked.getHall());
+    		MiniSala();
+    	}else if(stClicked.getHall().equals("SalaMedia")) {
+    		System.out.println(stClicked.getHall());
+    		SalaMedia();
+    	}
+    		
+    }
+    
+    void MiniSala()  throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MiniSala.fxml"));
+		//loader.setController(new MiniSala());
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene (parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
+    }
+    
+
+    void SalaMedia()  throws IOException {
+    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SalaMedia.fxml"));
+		//loader.setController(new RegisterFunctions());
+		Parent parent = (Parent) loader.load();
+		Scene scene = new Scene (parent);
+		Stage stage = new Stage();
+		stage.setScene(scene);
+		stage.show();
     }
     
     @FXML
