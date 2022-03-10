@@ -5,6 +5,7 @@
 <?import javafx.scene.control.ProgressBar?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -12,142 +13,145 @@
    <children>
       <Label layoutX="279.0" layoutY="28.0" text="Pantalla" />
       <ProgressBar layoutX="75.0" layoutY="5.0" prefHeight="18.0" prefWidth="444.0" progress="0.0" style="-fx-background-color: black;" />
-      <RadioButton fx:id="A2" layoutX="149.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A2" layoutX="149.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while">
+         <font>
+            <Font size="30.0" />
+         </font>
+         <toggleGroup>
+            <ToggleGroup fx:id="toogleGroup" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="A3" layoutX="217.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A3" layoutX="217.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A4" layoutX="286.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A4" layoutX="286.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A5" layoutX="353.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A5" layoutX="353.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A6" layoutX="413.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A6" layoutX="413.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A1" layoutX="83.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A1" layoutX="83.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="A7" layoutX="474.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="A7" layoutX="474.0" layoutY="116.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B2" layoutX="149.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B2" layoutX="149.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B3" layoutX="217.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B3" layoutX="217.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B4" layoutX="286.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B4" layoutX="286.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B5" layoutX="353.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B5" layoutX="353.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B6" layoutX="413.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B6" layoutX="413.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B1" layoutX="83.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B1" layoutX="83.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="B7" layoutX="474.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="B7" layoutX="474.0" layoutY="175.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C2" layoutX="149.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C2" layoutX="149.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C3" layoutX="217.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C3" layoutX="217.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C4" layoutX="286.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C4" layoutX="286.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C5" layoutX="353.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C5" layoutX="353.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C6" layoutX="413.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C6" layoutX="413.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C1" layoutX="83.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C1" layoutX="83.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="C7" layoutX="474.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="C7" layoutX="474.0" layoutY="234.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D2" layoutX="149.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D2" layoutX="149.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D3" layoutX="217.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D3" layoutX="217.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D4" layoutX="286.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D4" layoutX="286.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D5" layoutX="353.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D5" layoutX="353.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D6" layoutX="413.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D6" layoutX="413.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D1" layoutX="83.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-fxm-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>
       </RadioButton>
-      <RadioButton fx:id="D1" layoutX="83.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
-         <font>
-            <Font size="30.0" />
-         </font>
-      </RadioButton>
-      <RadioButton fx:id="D7" layoutX="474.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0">
+      <RadioButton fx:id="D7" layoutX="474.0" layoutY="287.0" mnemonicParsing="false" prefHeight="59.0" prefWidth="36.0" styleClass="custom-jfx-radio-button-while" toggleGroup="$toogleGroup">
          <font>
             <Font size="30.0" />
          </font>

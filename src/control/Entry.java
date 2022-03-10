@@ -13,7 +13,17 @@ import javafx.stage.Stage;
 import main.Main;
 
 public class Entry implements Initializable{
-    @FXML
+	 @FXML
+	    void Event(ActionEvent event)  throws IOException {
+	    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Event.fxml"));
+			//loader.setController(new RegisterFunctions());
+			Parent parent = (Parent) loader.load();
+			Scene scene = new Scene (parent);
+			Stage stage = new Stage();
+			stage.setScene(scene);
+			stage.show();
+	    }
+	@FXML
     void RegisterFuntions(ActionEvent event)  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RegisterFunctions.fxml"));
 		//loader.setController(new RegisterFunctions());
