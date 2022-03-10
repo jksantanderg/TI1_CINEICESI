@@ -3,7 +3,6 @@ package control;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -24,7 +23,6 @@ import model.Movie;
 import model.MovieData;
 import model.RoomType;
 import model.Student;
-import model.StudentData;
 
 public class Event implements Initializable{
 
