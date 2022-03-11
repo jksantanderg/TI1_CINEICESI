@@ -1,5 +1,10 @@
 package control;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,15 +26,42 @@ public class MainWindow{
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
     	//if(checkUser(id.getText())) {
-    	if(id.getText().equals("1100")) {
+    	
+  
+		String path = "C:\\Users\\carlos\\Documents\\Entrega\\TI1_CINEICESI\\data\\personalDataText.txt";	
+		File file = new File(path);
+		
+		//Dato de entrada desde el archivo 
+		
+		FileInputStream fis = new FileInputStream(file);
+		
+		//BufferedReader 
+		InputStreamReader isr = new InputStreamReader(fis);
+		BufferedReader reader = new BufferedReader(isr);
+		
+		String data = "";
+		String line = null;
+		int flag = -1;
+		
+    	while((line = reader.readLine()) != null && flag == -1){
+    		if(id.getText().equals(line)) {
+    			flag = 0;
+    			System.out.print("entro");
+    		}
+    		else {
+    			flag = -1;
+    			
+    		}
+		}
+    	
+    	if(flag == 0) {
     		init();
-    	}else {
-    		AlertERROR();
-    		
-    	}	
-    		
-    } 
-    
+    	}else if( flag == -1) {
+    		AlertERROR();    		
+    	}
+   		
+    	}
+   
     /**
      * This method checks if an user exists
      * @param id
