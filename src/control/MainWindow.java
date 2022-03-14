@@ -28,7 +28,7 @@ public class MainWindow{
     	//if(checkUser(id.getText())) {
     	
   
-		String path = "C:\\Users\\carlos\\Documents\\Entrega\\TI1_CINEICESI\\data\\personalDataText.txt";	
+		String path = "data/personalDataText.txt";	
 		File file = new File(path);
 		
 		//Dato de entrada desde el archivo 
