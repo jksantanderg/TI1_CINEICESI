@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="355.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Entry">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="389.0" prefWidth="358.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="control.Entry">
    <children>
       <Label layoutX="117.0" layoutY="82.0" text="CINE ICESI">
          <font>
@@ -14,5 +14,6 @@
       </Label>
       <Button layoutX="102.0" layoutY="144.0" mnemonicParsing="false" onAction="#RegisterFuntions" prefHeight="50.0" prefWidth="172.0" text="Register Funtions" />
       <Button layoutX="102.0" layoutY="204.0" mnemonicParsing="false" onAction="#Event" prefHeight="50.0" prefWidth="172.0" text="Events" />
+      <Button layoutX="102.0" layoutY="265.0" mnemonicParsing="false" onAction="#print" prefHeight="50.0" prefWidth="172.0" text="Print" />
    </children>
 </AnchorPane>
