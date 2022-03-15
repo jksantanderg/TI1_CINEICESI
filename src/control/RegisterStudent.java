@@ -26,6 +26,12 @@ public class RegisterStudent implements Initializable{
     @FXML
     private TextField idTF;
     
+    /**
+     * the method verify if the space of  text field are busy or not 
+     * @param event
+     * @throws IOException
+     */
+    
     @FXML
     void register(ActionEvent event) throws IOException {
     	if(nameTF.getText().equals("")) {
@@ -39,6 +45,9 @@ public class RegisterStudent implements Initializable{
     		Event(event);
     	}
     }
+    /**
+     * the method register a student 
+     */
     	
     public void reg() {
     	String name = nameTF.getText();
@@ -53,6 +62,12 @@ public class RegisterStudent implements Initializable{
     }
     
     @FXML
+    
+    /**
+     * the method show the window 
+     * @param event
+     * @throws IOException
+     */
     void Event(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Event.fxml"));
 		Parent parent = (Parent) loader.load();
@@ -62,6 +77,12 @@ public class RegisterStudent implements Initializable{
 		stage.show();
     }
 
+    /**
+     *the method returns a previous function
+     * @param event
+     * @throws IOException
+     */
+    
     @FXML
     void Return(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
@@ -71,6 +92,10 @@ public class RegisterStudent implements Initializable{
 		stage.setScene(scene);
 		stage.show();
     }
+    /**
+     * the method  close the program
+     * @param event
+     */
     
     @FXML
     void Exit(ActionEvent event) {
@@ -82,6 +107,9 @@ public class RegisterStudent implements Initializable{
 	public void initialize(URL location, ResourceBundle resources) {
 		
 	}
+	/**
+	 * is a alert that say if the parameters that the user give  is incomplete
+	 */
 	
     void AlertERROR() {
     	Alert alert = new Alert(AlertType.ERROR);
@@ -91,7 +119,9 @@ public class RegisterStudent implements Initializable{
 
     	alert.showAndWait();
     }
-    
+    /**
+     * is a alert that say if the parameters that the user give is all good  
+     */
     void AlertOk() {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("add of film");

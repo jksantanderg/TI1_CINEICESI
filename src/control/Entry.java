@@ -13,6 +13,15 @@ import javafx.stage.Stage;
 import main.Main;
 
 public class Entry implements Initializable{
+	
+	
+	
+	/**
+	 * the method initialize 
+	 * @param event
+	 * @throws IOException
+	 */
+	
 	 @FXML
 	    void Event(ActionEvent event)  throws IOException {
 	    	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Event.fxml"));
@@ -23,7 +32,16 @@ public class Entry implements Initializable{
 			stage.setScene(scene);
 			stage.show();
 	    }
+	 
+
+		/**
+		 * the method initialize 
+		 * @param event
+		 * @throws IOException
+		 */
+	 
 	@FXML
+	
     void RegisterFuntions(ActionEvent event)  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RegisterFunctions.fxml"));
 		//loader.setController(new RegisterFunctions());
@@ -33,6 +51,15 @@ public class Entry implements Initializable{
 		stage.setScene(scene);
 		stage.show();
     }
+	
+	
+
+	/**
+	 * the method initialize 
+	 * @param event
+	 * @throws IOException 
+	 */
+	
     @FXML
     void RegisterStudent(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/RegisterStudent.fxml"));
@@ -43,6 +70,17 @@ public class Entry implements Initializable{
 		stage.setScene(scene);
 		stage.show();
     }
+    
+    
+    
+    
+
+	/**
+	 * the method initialize
+	 * @param event
+     * @throws IOException 
+	 */
+    
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Event.fxml"));

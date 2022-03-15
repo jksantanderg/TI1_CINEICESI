@@ -100,6 +100,11 @@ public class MiniSala {
     @FXML
     private RadioButton D7;
     
+    /**
+     * the method verify if the status of chair is busy or not
+     * @throws Exception
+     */
+    
     public void estado() throws Exception {	
     	
     	if(A1.isSelected()) {

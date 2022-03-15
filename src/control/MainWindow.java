@@ -23,12 +23,22 @@ public class MainWindow{
     @FXML
     private TextField id;
 
+    
+    
+    
+    /**
+     * This method compare to the id that the user get in with the information of personal data
+     * @param event
+     * @throws Throwable
+     * 
+     */
+   
     @FXML
     void ingresar(ActionEvent event) throws Throwable {
     	//if(checkUser(id.getText())) {
     	
   
-		String path = "C:\\Users\\carlos\\Documents\\Entrega\\TI1_CINEICESI\\data\\personalDataText.txt";	
+		String path = "data/personalDataText.txt";	
 		File file = new File(path);
 		
 		//Dato de entrada desde el archivo 
@@ -46,7 +56,7 @@ public class MainWindow{
     	while((line = reader.readLine()) != null && flag == -1){
     		if(id.getText().equals(line)) {
     			flag = 0;
-    			System.out.print("entro");
+    			
     		}
     		else {
     			flag = -1;
@@ -66,28 +76,10 @@ public class MainWindow{
      * This method checks if an user exists
      * @param id
      * @return userExists, boolean, true if the user exists, false otherwise
+     * @throws Exception
      */
-    public boolean checkUser (String id) {
-    	boolean userExists = false;
-    	for(Personal personal : PersonalData.personals) {
-    		if(personal.getIdPersonal().equals(id)) {
-    			userExists = true;
-    			break;
-    		}
-    	}
-    			
-    	return userExists;
-    	
-    }
     
-    private Personal personal;
-    public void validar() {
-    	if(personal.getIdPersonal().equals(id.getText())) {
-    		System.out.println("");
-    	}
-    }
-
-    
+   
     public void init()throws Exception{  
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
 		Parent parent = (Parent) loader.load();
@@ -97,11 +89,18 @@ public class MainWindow{
 		stage.show();
     }    	
     	
+    
+    
+   /*
+    * is a alert that say if the id´s user is incorrect 
+    */
+    
+   
     void AlertERROR() {
     	Alert alert = new Alert(AlertType.ERROR);
     	alert.setTitle("ERROR");
     	alert.setHeaderText("Error, Incorrecto");
-    	alert.setContentText("Ooops, The document I entered does not correspond to a welfare student!");
+    	alert.setContentText("Ooops, The document I entered does not correspond to a welfare personal!");
 
     	alert.showAndWait();
     }
