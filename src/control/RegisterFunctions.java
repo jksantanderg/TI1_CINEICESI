@@ -43,7 +43,13 @@ public class RegisterFunctions implements Initializable {
     @FXML
     private ComboBox<String> hallCB;
 
-    
+
+    /**
+     *the method verify if the parameters is all good  
+	 * if is all ok shows the alert ok, but if isn´t shows the alert error
+	 * @param event
+     *
+     */ 
     @FXML
     void register(ActionEvent event) {
     	if(nameFilmTF.getText().equals("")) {
@@ -63,7 +69,11 @@ public class RegisterFunctions implements Initializable {
     		
     	}
     }
-    
+
+    /**
+     *the method register a movie with the parameters that the user gave 
+     *
+     */
     void reg() {
     	//ComboBox,getSelectionModel().getSelectedItem();
     	String name = nameFilmTF.getText();
@@ -82,7 +92,11 @@ public class RegisterFunctions implements Initializable {
    	 	
     }
 
-    
+    /**
+     *the method returns a previous function
+     * @param event
+     * @throws IOException
+     */    
     @FXML
     void Return(ActionEvent event) throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
@@ -92,13 +106,22 @@ public class RegisterFunctions implements Initializable {
 		stage.setScene(scene);
 		stage.show();
     }
-    
+   /**
+    * the method  close the program
+    * @param event
+    */
     @FXML
     void Exit(ActionEvent event) {
     	Platform.exit();
     	System.exit(0);
     }
-
+	/**
+	 *the method initialize
+	 *in this method the combobox options are created
+	 * @param location
+	 * @param resources
+	 *
+	 */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 
@@ -108,6 +131,9 @@ public class RegisterFunctions implements Initializable {
     	hallCB.getItems().addAll(list);
 		
 	}
+	/**
+	 * is a alert that say if the parameters that the user give  is incomplete
+	 */
 	
     void AlertERROR() {
     	Alert alert = new Alert(AlertType.ERROR);
@@ -117,7 +143,9 @@ public class RegisterFunctions implements Initializable {
 
     	alert.showAndWait();
     }
-    
+    /**
+     * is a alert that say if the parameters that the user give is all good  
+     */
     void AlertOk() {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("add of film");

@@ -78,6 +78,7 @@ public class Event implements Initializable{
 	/**
 	 * this method creates an event
 	 * @param event
+	 * @throws IOException
 	 */
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
@@ -102,6 +103,7 @@ public class Event implements Initializable{
     
 	/**
 	 * this method addresses it for the type of room
+	 * @throws IOException
 	 * 
 	 */
     void SelecRoom() throws IOException {
@@ -160,10 +162,11 @@ public class Event implements Initializable{
     	CinemaData.cinemas.add(cinema);
     	
     }
-	/**
-	 * this method directs you to the mini-room window where you can select your seat in the function
-	 *
-	 */
+    /**
+     * the method show the MiniSala
+     * @param event
+     * @throws IOException
+     */
     void MiniSala()  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MiniSala.fxml"));
 		//loader.setController(new MiniSala());
@@ -174,10 +177,11 @@ public class Event implements Initializable{
 		stage.show();
     }
     
-	/**
-	 * this method directs you to the mini-room window where you can select your seat in the function
-	 *
-	 */
+    /**
+     * the method show the SalaMedia
+     * @param event
+     * @throws IOException
+     */
     void SalaMedia()  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SalaMedia.fxml"));
 		//loader.setController(new RegisterFunctions());
@@ -187,16 +191,13 @@ public class Event implements Initializable{
 		stage.setScene(scene);
 		stage.show();
     }
-    
 
    
-   
 	/**
-	 * this method allows to display the elements of an arrayList in a table view
-	 * @param location
-	 * @param resources
-	 */
-    
+	 * this method verifies that a student with empty data is not added
+	 * @param event
+	 * @throws IOException
+	 */    
     @FXML
     void register(ActionEvent event) throws IOException {
     	
@@ -211,7 +212,9 @@ public class Event implements Initializable{
     		
     	}
     }
-    	
+    /**
+     * the method register a student 
+     */
     public void reg() {
     	String name = nameTF.getText();
     	String id = idTF.getText();
@@ -220,6 +223,11 @@ public class Event implements Initializable{
     	StudentData.dat.add(st);
     	StudentData.data.add(st);
     }
+    /**
+     * This method allows the program to display the elements of an arrayList in a table view
+     * @param location
+     * @param resources
+     */
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		nameMovieTC.setCellValueFactory(new PropertyValueFactory<>("nameMovie"));
@@ -246,6 +254,10 @@ public class Event implements Initializable{
     	
 	}
 	
+    /**
+     * this alert warns that a movie has not been selected
+     *
+     */ 
     void AlertMovie() {
     	Alert alert = new Alert(AlertType.ERROR);
     	alert.setTitle("ERROR");
@@ -254,6 +266,11 @@ public class Event implements Initializable{
 
     	alert.showAndWait();
     }
+    
+    /**
+     * is a alert that say if the id´s user is ok
+     *
+     */ 
     void AlertERROR() {
     	Alert alert = new Alert(AlertType.ERROR);
     	alert.setTitle("ERROR");
@@ -262,7 +279,10 @@ public class Event implements Initializable{
 
     	alert.showAndWait();
     }
-    
+    /**
+     * is a alert that say if the id´s user is incorrect 
+     *
+     */ 
     void AlertOk() {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("add of film");

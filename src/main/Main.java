@@ -7,7 +7,12 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 public class Main extends Application {
-
+	
+    
+    /**
+     * the method id main
+     *
+     */
 	public static void main(String[] args) {
 		launch(args);
 		
@@ -16,7 +21,12 @@ public class Main extends Application {
 		//data.LoadData();
 		
 	}
-	
+    
+    /**
+     * the method start
+     *	@param primaryStage
+     *	@throws Exception
+     */
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MainWindow.fxml"));

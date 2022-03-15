@@ -1,5 +1,7 @@
 package control;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -139,7 +141,11 @@ public class SalaMedia {
     @FXML
     private RadioButton F7;
     
-public void estado() throws Exception {	
+    /**
+     * the method verify if the status of chair is busy or not
+     * @throws Exception
+     */
+    public void estado() throws Exception {	
     	
     	if(A1.isSelected()) {
     		//myLabel.setText(A1.getText());
@@ -235,7 +241,11 @@ public void estado() throws Exception {
     	}
     }
 
-
+	/**
+	 * this method allows you to reserve a seat
+	 * @param event
+	 * @throws Exception
+	 */
     @FXML
     void reserve(ActionEvent event) throws Exception {
     	estado();
@@ -243,7 +253,10 @@ public void estado() throws Exception {
     	//init();
     	
     }
-    
+    /**
+     * the method show the Entry
+     * @throws Exception
+     */
     public void init()throws Exception{  
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
 		Parent parent = (Parent) loader.load();
@@ -251,7 +264,12 @@ public void estado() throws Exception {
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
-    }  
+    } 
+    
+    /**
+     * is a alert that say if the id´s user is ok
+     *
+     */
     void AlertOk() {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("RESERVE");

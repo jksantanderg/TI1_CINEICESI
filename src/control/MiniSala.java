@@ -1,7 +1,6 @@
 package control;
 
-import java.awt.event.MouseAdapter;
-
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -10,10 +9,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import main.Main;
-import model.ChairData;
 
 public class MiniSala {
 	
@@ -101,6 +98,10 @@ public class MiniSala {
     @FXML
     private RadioButton D7;
     
+    /**
+     * the method verify if the status of chair is busy or not
+     * @throws Exception
+     */    
     public void estado() throws Exception {	
     	
     	if(A1.isSelected()) {
@@ -169,7 +170,11 @@ public class MiniSala {
     }
     
 
-
+    /**
+     * this method allows you to reserve a seat
+     * @param event
+     * @throws Exception
+     */
     @FXML
     void reserve(ActionEvent event) throws Exception {
     	estado();
@@ -177,7 +182,10 @@ public class MiniSala {
     	//init();
     	
     }
-    
+    /**
+     * the method show the Entry
+     * @throws Exception
+     */
     public void init()throws Exception{  
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/Entry.fxml"));
 		Parent parent = (Parent) loader.load();
@@ -185,13 +193,16 @@ public class MiniSala {
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
-    }  
+    }
+    /**
+     * is a alert that say if the id´s user is ok
+     *
+     */
     void AlertOk() {
     	Alert alert = new Alert(AlertType.INFORMATION);
     	alert.setTitle("RESERVE");
     	alert.setHeaderText("SUCCESSFUL");
     	alert.setContentText("reserve SUCCESSFULLY!!");
-
     	alert.showAndWait();
     }
 
