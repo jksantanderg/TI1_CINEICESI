@@ -2,6 +2,7 @@ package control;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -9,20 +10,24 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import main.Main;
 import model.Chair;
+import model.ChairData;
 import model.Cinema;
 import model.CinemaData;
 import model.Movie;
 import model.MovieData;
 import model.RoomType;
 import model.Student;
+import model.StudentData;
 
 public class Event implements Initializable{
 
@@ -59,63 +64,106 @@ public class Event implements Initializable{
     @FXML
     private TableColumn<Student, String> idTC;
     
+    
     @FXML
     private Label movieLbl;
-    private Chair chair;
+ 
     @FXML
     private Label studentLbl;
     
     private  Movie stClicked;
-    private Student stClickedS;
-    
-    void RegistarCinema() {
-    	RegistarInMovie();
-    	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
-    	RoomType  room = null;
-    	Cinema cinema = null;
-    	if(stClicked.getHall().equals("MiniSala")) {
-    		System.out.println(stClicked.getHall());
-    		 room = RoomType.MiniSala;
-    	}else if(stClicked.getHall().equals("SalaMedia")) {
-    		System.out.println(stClicked.getHall());
-    		 room = RoomType.SalaMedia;
-    		
-    	}
-    	Cinema st = new Cinema(stClicked, cinema.students,cinema.chairs,room);
-    	CinemaData.cinemas.add(st);
-    	
-    	
-    }
 
-    void RegistarInMovie() {
-    	Cinema data = new Cinema();
-    	Student student = stClickedS;
-    	data.EnrollStudent(student);
-    }
     
+
+	/**
+	 * this method creates an event
+	 * @param event
+	 */
     @FXML
     void RegisterEvent(ActionEvent event) throws IOException {
-    	//RegistarInMovie();
-    	SelecRoom();
-    	
-    	
-    	
-    	
+    	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
+    	  	
+    	if(stClicked!=null) {
+    		if(nameTF.getText().equals("")) {
+        		AlertERROR();
+        		
+        	}else if (idTF.getText().equals("")){
+        		AlertERROR();	
+        	}else {
+        		SelecRoom();
+        	}
+    		
+    	}else {
+    		AlertMovie();
+    		System.out.println("Seleccione un Movie");
+        	}
     }
+
     
+	/**
+	 * this method addresses it for the type of room
+	 * 
+	 */
     void SelecRoom() throws IOException {
     	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
-		
+    	Stage stage = (Stage) nameTF.getScene().getWindow();
+    	stage.close();	
     	if(stClicked.getHall().equals("MiniSala")) {
     		System.out.println(stClicked.getHall());
     		MiniSala();
+    		minisala();
     	}else if(stClicked.getHall().equals("SalaMedia")) {
     		System.out.println(stClicked.getHall());
     		SalaMedia();
+    		salamedia();
     	}
-    		
+    	
     }
     
+	/**
+	 * this method creates an event with room type MiniSala
+	 *
+	 */
+    void minisala() {
+    	CinemaData cm = new CinemaData();
+    	
+    	
+    	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
+    	;
+    	
+    	ArrayList<Student> st = StudentData.data;
+    	ArrayList<Chair> ch = ChairData.data;
+    	
+    	Cinema cinema = new Cinema (stClicked,RoomType.MiniSala,st,ch);
+    	cm.addCinema(cinema);
+    	CinemaData.cinemas.add(cinema);
+    	
+    	
+    }
+    
+	/**
+	 * this method creates an event with room type SalaMedia
+	 * 
+	 */
+    void salamedia() {
+    	CinemaData cm = new CinemaData();
+    	
+    	
+    	Movie stClicked = filmTable.getSelectionModel().getSelectedItem();
+    	;
+    	
+    	ArrayList<Student> st = StudentData.data;
+    	ArrayList<Chair> ch = ChairData.data;
+    	
+    	Cinema cinema = new Cinema (stClicked,RoomType.SalaMedia,st,ch);
+    	cm.addCinema(cinema);
+    	CinemaData.cinemas.add(cinema);
+    	
+    }
+	/**
+	 * this method directs you to the mini-room window where you can select your seat in the function
+	 *
+	 */
     void MiniSala()  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/MiniSala.fxml"));
 		//loader.setController(new MiniSala());
@@ -126,7 +174,10 @@ public class Event implements Initializable{
 		stage.show();
     }
     
-
+	/**
+	 * this method directs you to the mini-room window where you can select your seat in the function
+	 *
+	 */
     void SalaMedia()  throws IOException {
     	FXMLLoader loader = new FXMLLoader(Main.class.getResource("../ui/SalaMedia.fxml"));
 		//loader.setController(new RegisterFunctions());
@@ -140,7 +191,35 @@ public class Event implements Initializable{
 
    
    
-
+	/**
+	 * this method allows to display the elements of an arrayList in a table view
+	 * @param location
+	 * @param resources
+	 */
+    
+    @FXML
+    void register(ActionEvent event) throws IOException {
+    	
+    	if(nameTF.getText().equals("")) {
+    		AlertERROR();
+    		
+    	}else if (idTF.getText().equals("")){
+    		AlertERROR();	
+    	}else {
+    		AlertOk();
+    		reg();
+    		
+    	}
+    }
+    	
+    public void reg() {
+    	String name = nameTF.getText();
+    	String id = idTF.getText();
+    	
+    	Student st = new Student(name,id);
+    	StudentData.dat.add(st);
+    	StudentData.data.add(st);
+    }
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		nameMovieTC.setCellValueFactory(new PropertyValueFactory<>("nameMovie"));
@@ -166,5 +245,31 @@ public class Event implements Initializable{
     	
     	
 	}
+	
+    void AlertMovie() {
+    	Alert alert = new Alert(AlertType.ERROR);
+    	alert.setTitle("ERROR");
+    	alert.setHeaderText("Error, Incomplet");
+    	alert.setContentText("Ooops, select a movie!");
+
+    	alert.showAndWait();
+    }
+    void AlertERROR() {
+    	Alert alert = new Alert(AlertType.ERROR);
+    	alert.setTitle("ERROR");
+    	alert.setHeaderText("Error, Incomplet");
+    	alert.setContentText("Ooops, a field is missing!");
+
+    	alert.showAndWait();
+    }
+    
+    void AlertOk() {
+    	Alert alert = new Alert(AlertType.INFORMATION);
+    	alert.setTitle("add of film");
+    	alert.setHeaderText("SUCCESSFUL");
+    	alert.setContentText("movie added SUCCESSFULLY!!");
+
+    	alert.showAndWait();
+    }
 
 }

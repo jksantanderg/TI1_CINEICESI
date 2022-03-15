@@ -19,13 +19,25 @@ public class MovieData {
 
 	private ArrayList<Movie> films;
 	
+	/**
+	 * 
+	 */
 	public MovieData() {
 		films = new ArrayList<>();
 	}
 	
+	/**
+	 * this method create a new movie
+	 * @param student
+	 */
 	public void addFilm(Movie film) {
 		films.add(film);
 	}
+	
+	/**
+	 * this method saves the information
+	 *
+	 */
 	public void saveData()  {
 		
 		try {
@@ -45,6 +57,11 @@ public class MovieData {
 		
 	}
 	
+	
+	/**
+	 * this method load the information
+	 * 
+	 */
 	public void LoadData() {
 		try {
 			File file = new File("filmdata.temp");

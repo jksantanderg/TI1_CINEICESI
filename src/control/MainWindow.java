@@ -56,6 +56,8 @@ public class MainWindow{
     	
     	if(flag == 0) {
     		init();
+    		Stage stage = (Stage) id.getScene().getWindow();
+        	stage.close();	
     	}else if( flag == -1) {
     		AlertERROR();    		
     	}
@@ -95,6 +97,8 @@ public class MainWindow{
 		Stage stage = new Stage();
 		stage.setScene(scene);
 		stage.show();
+		
+		
     }    	
     	
     void AlertERROR() {

@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -23,11 +24,13 @@
             <TableColumn fx:id="hallTC" prefWidth="90.0" text="Hall" />
         </columns>
       </TableView>
-      <Label fx:id="movieLbl" layoutX="62.0" layoutY="356.0" prefHeight="36.0" prefWidth="123.0">
+      <Label fx:id="movieLbl" layoutX="241.0" layoutY="356.0" prefHeight="36.0" prefWidth="97.0">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
       <Button layoutX="361.0" layoutY="356.0" mnemonicParsing="false" onAction="#RegisterEvent" prefHeight="36.0" prefWidth="123.0" style="-fx-background-color: Blue;" text="Register Event" textFill="#fcf5f5" />
+      <TextField fx:id="nameTF" layoutX="62.0" layoutY="344.0" promptText="Name Student" />
+      <TextField fx:id="idTF" layoutX="62.0" layoutY="380.0" promptText="Id Student" />
    </children>
 </AnchorPane>

@@ -1,8 +1,12 @@
 package model;
 
+import java.util.ArrayList;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
+
 public class StudentData {
-	public static ObservableList<Student> data = FXCollections.observableArrayList();
+	public static ArrayList<Student> data;
+	public static ObservableList<Student> dat = FXCollections.observableArrayList();
 }

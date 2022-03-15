@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import main.Main;
+import model.ChairData;
 
 public class MiniSala {
 	
@@ -166,13 +167,6 @@ public class MiniSala {
     	}
 	
     }
-    
-
-    /*public void mouseClicked(MouseEvent e) {
-    	A1.addMouseListener(new MouseAdapter() {
-        	
-        }
-	}*/
     
 
 

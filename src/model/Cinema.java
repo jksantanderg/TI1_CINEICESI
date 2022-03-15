@@ -5,80 +5,99 @@ import java.util.ArrayList;
 public class Cinema {
 	private Movie movie;
 	private RoomType roomType;
-	public ArrayList<Student> students;
-	public ArrayList<Chair> chairs;
-	
-	public static final Integer capacidadMINISALA = 28;
-	public static final Integer capacidadSALAMEDIA = 42;
-	
+	public static ArrayList<Student> students;
+	public static ArrayList<Chair> chairs;
 	
 	public Cinema() {}
 	
-	public Cinema(Movie movie, ArrayList<Student> students, ArrayList<Chair> chairs, RoomType roomType) {
+	/**
+	 * @param movie
+	 * @param roomType
+	 * @param students
+	 * @param chairs
+	 */
+	public Cinema(Movie movie, RoomType roomType, ArrayList<Student> students, ArrayList<Chair> chairs) {
 		super();
 		this.movie = movie;
+		this.roomType = roomType;
 		this.students = students;
 		this.chairs = chairs;
-		this.roomType = roomType;
 	}
-	
+
+
+	/**
+	 * this method assigns the student in the cinema class
+	 * @param student
+	 */
 	public void EnrollStudent(Student student) {
 		students.add(student);
 		student.setCinema(this);
 		
 	}
-	
-	
-	public void SelectChair(Chair chair) {
-		chairs.add(chair);
-		chair.setCinema(this);
-	}
 
-	
+	/**
+	 *this method assigns the chair in the cinema class
+	 * @param chair
+	 */
 	public void AssignChair(Chair chair) {
 		chairs.add(chair);
 		chair.setCinema(this);
 		
 	}
-	
-	/*public Movie SearchMovie(String nameMovie) {
-		Movie m = null;
-		for(Personal personal : PersonalData.personals) {
-    		if(personal.getIdPersonal().equals(id)) {
-		
-		Iterator <Movie> iterator = ArrayList.iterator();
-		while(movies.hasNext) {
-			m = ite.next();
-			if(m.getNameMovie().equals(nameMovie)){
-				return m;
-			}
-			m = null;
-		}
-		return m;
-	}*/
-	
+
+	/**
+	 * @return the movie
+	 */
 	public Movie getMovie() {
 		return movie;
 	}
+
+	/**
+	 * @param movie the movie to set
+	 */
 	public void setMovie(Movie movie) {
 		this.movie = movie;
 	}
-	public ArrayList<Student> getStudents() {
-		return students;
-	}
-	public void setStudents(ArrayList<Student> students) {
-		this.students = students;
-	}
-	public ArrayList<Chair> getChairs() {
-		return chairs;
-	}
-	public void setChairs(ArrayList<Chair> chairs) {
-		this.chairs = chairs;
-	}
+
+	/**
+	 * @return the roomType
+	 */
 	public RoomType getRoomType() {
 		return roomType;
 	}
+
+	/**
+	 * @param roomType the roomType to set
+	 */
 	public void setRoomType(RoomType roomType) {
 		this.roomType = roomType;
+	}
+
+	/**
+	 * @return the students
+	 */
+	public ArrayList<Student> getStudents() {
+		return students;
+	}
+
+	/**
+	 * @param students the students to set
+	 */
+	public void setStudents(ArrayList<Student> students) {
+		this.students = students;
+	}
+
+	/**
+	 * @return the chairs
+	 */
+	public ArrayList<Chair> getChairs() {
+		return chairs;
+	}
+
+	/**
+	 * @param chairs the chairs to set
+	 */
+	public void setChairs(ArrayList<Chair> chairs) {
+		this.chairs = chairs;
 	}
 }
